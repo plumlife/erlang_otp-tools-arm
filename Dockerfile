@@ -17,3 +17,9 @@ RUN cd /
 RUN git clone https://github.com/rebar/rebar3.git
 RUN cd rebar3 && make && ./bootstrap/bootstrap && mv rebar3 /usr/local/bin
 RUN cd ../ && rm -rf rebar3
+
+# Build GPB (protocol buffers for Erlang)
+RUN cd /
+RUN git clone https://github.com/tomas-abrahamsson/gpb.git
+RUN cd gpb && make all && cd ../
+RUN mv gpb /usr/local/gpb
