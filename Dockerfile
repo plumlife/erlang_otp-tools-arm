@@ -1,4 +1,4 @@
-FROM plumlife/erlang_otp-arm:17.5-2_smp-nacl-dialyzed
+FROM plumlife/erlang_otp-arm:17.5-6-2_smp-nacl-dialyzed
 
 # Build relx
 RUN cd /
