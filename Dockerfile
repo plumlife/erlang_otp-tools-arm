@@ -14,15 +14,10 @@ RUN cd rebar3 && git checkout 3.0.0-beta.4 && ./bootstrap && mv rebar3 /usr/loca
 RUN cd ../ && ls && rm -rf rebar3
 
 # Build relx
-#
-# NOTE: we need the `master` branch of relx because an issue with
-# custom rebar3 build profiles interacting poorly with relx is
-# fixed. This can be switched to a tag once that changes makes it to a
-# release.
 RUN cd /
 RUN rm -rf relx
 RUN git clone https://github.com/erlware/relx.git
-RUN cd relx && git checkout master && ./rebar3 update && ./rebar3 escriptize && mv _build/default/bin/relx /usr/local/bin
+RUN cd relx && git checkout v3.15.0 && ./rebar3 update && ./rebar3 escriptize && mv _build/default/bin/relx /usr/local/bin
 RUN cd ../ && rm -rf _build
 
 RUN /opt/arm/lib/erlang/Install -minimal /opt/arm/lib/erlang
