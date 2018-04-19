@@ -9,8 +9,8 @@ RUN cd ../ && rm -rf rebar
 # Build rebar3
 RUN cd /
 RUN rm -rf rebar3
-RUN git clone https://github.com/rebar/rebar3.git
-RUN cd rebar3 && git checkout 3.0.0-beta.4 && ./bootstrap && mv rebar3 /usr/local/bin
+RUN git clone https://github.com/plumlife/rebar3.git
+RUN cd rebar3 && git checkout plum-3.0.0-beta.4 && ./bootstrap && mv rebar3 /usr/local/bin
 RUN cd ../ && ls && rm -rf rebar3
 
 # Build relx
